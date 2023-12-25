@@ -1,0 +1,220 @@
+@charset "UTF-8";
+/* CSSにも文字コードを指定できるの知ってた？ */
+
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    /***** なんで62.5%なのかわからない人は調べて確認しておこう *****/
+    font-size: 62.5%;
+}
+body{
+    font-size: 1.6rem;
+    color: #000c15;
+    background-color: #e8edf8;
+    font-family: メイリオ, Meiryo, Osaka, “ヒラギノ角ゴ Pro W3”, “Hiragino Kaku Gothic Pro”, “ＭＳ Ｐゴシック”, “MS PGothic”, sans-serif;
+}
+a:hover{
+    color: #999;
+}
+.clear::after{
+    /* clearfix */
+    content: " ";
+    display: block;
+    clear: both;
+}
+h2{
+    padding-left: 1rem;
+    background-color:rgb(79, 137, 182);
+    color: #ffffff;
+    text-shadow: 1px 1px 0 #4b4b4b,-1px -1px 0 #4d4d4d;
+}
+/* ヘッダー */
+header,footer{
+    text-align: center;
+    background: #000c15;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+header h1{
+    animation: animetxt 1s forwards 0s;
+    transform: translateY(10%);
+    color: #ffffff;;
+    text-shadow: 2px 2px 0 #8f95b3, -1px -1px 0 #8f95b3;
+}
+@keyframes animetxt{
+    0%{
+        transform: translateY(90%);
+    }
+}
+/* ニュース */
+.news{
+    width: 700px;
+    margin: auto;
+}
+.news section{
+    padding: 5px;
+    background-color: #fff;
+}
+.news  article{
+    text-align: left;
+}
+.news h2{
+    margin-top: 5px;
+}
+.news  h3{
+    font-size: 1.6rem;
+    width: 66%;
+    /* はみ出した文字の処理 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* ここまで */
+    display: inline-block;
+}
+.news  ul{
+    width: 32%;
+    font-size: 1.0rem;
+    color: #999;
+    list-style: none;
+    display: inline-block;
+}
+.news  li{
+    /* padding: ; */
+    float: left;
+}
+.news-site{
+    width: 120px;
+    /* はみ出した文字の処理 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.clear{
+    margin-bottom: 1rem;
+}
+/* メイン */
+main{
+    width: 1000px;
+    font-size: 1.4rem;
+    margin: 10px auto;
+    display: flex;
+}
+main h2{
+    margin: 0 5px;
+}
+main article{
+    width: 700px;
+}
+main section{
+    margin: 0 5px 5px;
+    padding: 0 5px 5px;
+    background-color: #fff;
+}
+
+main h3{
+    text-align: center
+}
+.clear{
+    margin-bottom: 1rem;
+}
+section p{
+    padding: 5px 0;
+    color: #555;
+}
+.icon{
+    margin: 5px;
+    width: 100px;
+    border-radius: 50%;
+    float:left;
+}
+main aside{
+    width: 300px;
+}
+article h3{
+    padding-top: 1rem;
+}
+/* サイドバー */
+.member{
+    text-align: center;
+    padding: 1rem 0;
+    margin-bottom: 1rem;
+}
+.member-icon{
+    width: 80px;
+    border-radius: 50%;
+}
+/* フッター */
+footer p{
+    color: #d4d4d4;
+}
+
+@media screen and (max-width:1280px){
+    main{
+        display:initial;
+    }
+    main article{
+        margin: 0 auto;
+    }
+    main  aside{
+        width: 700px;
+        margin: 0 auto;
+    }
+    .member{
+        display: inline-block;
+        padding:1rem;
+    }
+    main aside h2{
+        padding: 0;
+        text-align: center;
+    }
+}
+
+@media screen and (max-width:768px) {
+    /*スマホ用のcssを記述*/
+    html{
+        font-size: 100%;
+    }
+    header{
+        height: 80px;
+    }
+    .news{
+        width: 98%;
+        height: 330px;
+        overflow-y: scroll;
+    }
+    .news ul{
+        width:100%;
+    }
+    .news  h3{
+        width: 100%;
+        padding-top: 3px;
+        white-space: wrap;
+    }
+    main h2{
+        margin-top: 1rem;
+    }
+    main aside{
+        width: 100%;
+    }
+    main article{
+        width: 100%;
+    }
+    .icon{
+        width: 50%;
+        margin: initial;
+        float: initial;
+        padding: 0 25%;
+    }
+    aside{
+        text-align: center;
+    }
+    aside h2{
+        margin: 0 auto;
+    }
+    section h3{
+        font-size: 1.5rem;
+    }
+}
